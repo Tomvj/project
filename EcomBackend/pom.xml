@@ -41,6 +41,8 @@
 			<artifactId>spring-orm</artifactId>
 			<version>5.1.5.RELEASE</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
 			<groupId>org.springframework</groupId>
