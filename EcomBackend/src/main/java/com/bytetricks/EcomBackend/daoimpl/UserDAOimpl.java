@@ -22,11 +22,12 @@ public class UserDAOimpl implements UserDAO {
 	public boolean insertUser(User user) {
 		try {
 			UserCred uc = new UserCred();
-			uc.setUsername(user.getEmailid());
+			uc.setUserEmail(user.getEmailid());
 			uc.setPassword(user.getPassword());
 			uc.setRole("ROLE_USER");
 			uc.setStatus("false");
 			sessionFactory.getCurrentSession().save(user);
+			sessionFactory.getCurrentSession().save(uc);
 			return true;
 		} catch (Exception e) {
 			return false;

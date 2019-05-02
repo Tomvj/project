@@ -51,7 +51,7 @@ public class CategoryDAOimpl implements CategoryDAO {
 	public Category selectOneCategory(String categname) {
 		try {
 			return (Category) sessionFactory.getCurrentSession()
-					.createQuery("from User where categname='" + categname + "'").uniqueResult();
+					.createQuery("from Category where categname='" + categname + "'").uniqueResult();
 		} catch (Exception e) {
 			return null;
 		}
@@ -60,7 +60,7 @@ public class CategoryDAOimpl implements CategoryDAO {
 	@Override
 	public boolean deleteCategory(String categname) {
 		try {
-			sessionFactory.getCurrentSession().delete(categname,Category.class);
+			sessionFactory.getCurrentSession().delete(selectOneCategory(categname));
 			return true;
 		} catch (Exception e) {
 			return false;

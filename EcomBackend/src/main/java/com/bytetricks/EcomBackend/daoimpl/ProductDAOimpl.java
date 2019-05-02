@@ -40,13 +40,21 @@ public class ProductDAOimpl implements ProductDAO
 	@Override
 	public boolean deleteProduct(int productid) {
 		try {
-			sessionFactory.getCurrentSession().delete(productid);
+			sessionFactory.getCurrentSession().delete(selectOneProducts(productid));
 			return true;
 		} catch (Exception e) {
 			return false;
 		}
 	}
 
+	@Override
+	public List<Product> selectcatProducts(int id) {
+		try {
+			return sessionFactory.getCurrentSession().createQuery("from Product where productcategory="+id).list();
+		} catch (Exception e) {
+			return null;
+		}
+	}
 	@Override
 	public List<Product> selectAllProducts() {
 		try {
@@ -56,11 +64,12 @@ public class ProductDAOimpl implements ProductDAO
 		}
 	}
 
+
 	
 	@Override
 	public Product selectOneProducts(int productid) {
 		try {
-			return (Product) sessionFactory.getCurrentSession().createQuery("from User where productid='" + productid + "'").uniqueResult();
+			return (Product) sessionFactory.getCurrentSession().createQuery("from Product where productid=" + productid).uniqueResult();
 		} catch (Exception e) {
 			return null;
 		}	

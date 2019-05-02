@@ -6,17 +6,18 @@ import javax.persistence.Id;
 @Entity
 public class UserCred {
 	@Id
-	private String Username;
+	private String UserEmail;
 	private String Password;
 	private String Role;
 	private String Status;
 
-	public String getUsername() {
-		return Username;
+	
+	public String getUserEmail() {
+		return UserEmail;
 	}
 
-	public void setUsername(String username) {
-		Username = username;
+	public void setUserEmail(String userEmail) {
+		UserEmail = userEmail;
 	}
 
 	public String getPassword() {
@@ -26,7 +27,6 @@ public class UserCred {
 	public void setPassword(String password) {
 		Password = password;
 	}
-
 	public String getRole() {
 		return Role;
 	}

@@ -1,1 +1,9 @@
+com\bytetricks\EcomFrontend\Controller\UserController.class
+com\bytetricks\EcomFrontend\Controller\CategoryController.class
+com\bytetricks\EcomFrontend\Controller\OrderController.class
+com\bytetricks\EcomFrontend\Controller\SellerController.class
 com\bytetricks\EcomFrontend\Controller\HomeController.class
+com\bytetricks\EcomFrontend\Controller\AddressController.class
+com\bytetricks\EcomFrontend\Controller\ProductController.class
+com\bytetricks\EcomFrontend\Controller\CartController.class
+com\bytetricks\EcomFrontend\Controller\LoginController.class

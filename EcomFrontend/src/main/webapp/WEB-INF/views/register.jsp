@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <style>
 ::selection {
 	background-color: #00547E;
@@ -19,8 +21,8 @@ body {
 
 #logbox {
 	padding: 10px;
-	margin: 50px auto;
-	width: 340px;
+	margin: 30px auto;
+	width: 350px;
 	background-color: #fff;
 	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
@@ -100,24 +102,35 @@ h1, input {
 
 <div class="container ">
 	<div class="col-md-6">
-		<div id="logbox" style="margin-left:70%; margin-top: 25%">
-			<form id="signup" method="post" action="/signup">
+		<div id="logbox" style="margin-left:70%; margin-top: 20%; margin-bottom:0px;  ">
+		<c:if test="${success}">
+				<div class="alert alert-success" role="alert">Registered
+					Successfully</div>
+			</c:if>
+			<c:if test="${error}">
+				<div class="alert alert-danger" role="alert">${message}</div>
+			</c:if>
+			<form:form id="signup" method="Post" action="addcustomer" modelAttribute="myuser">
 				<h1>Start Here</h1>
-				<input name="user[name]" type="text" placeholder="Username"
-					pattern="^[\w]{3,16}$" autofocus="autofocus" required="required"
-					class="input pass" /> <input name="user[password]" type="password"
+				<form:input name="user[name]" type="text" placeholder="Username"
+					 autofocus="autofocus" required="required"
+					class="input pass" path="cname"/>
+					 <form:input name="user[password]" type="password"
 					placeholder="Choose password" required="required"
-					class="input pass" /> <input name="user[password2]" type="password"
-					placeholder="Confirm password" required="required"
-					class="input pass" /> <input name="user[email]" type="email"
-					placeholder="Email-ID" class="input pass" /> <input type="submit"
+					class="input pass" path="password"/>
+					 <form:input name="Contact Number" type="text"
+					placeholder="Phone Number" required="required"
+					class="input pass" path="phno"/> 
+					<form:input name="user[email]" type="email"
+					placeholder="Email-ID" class="input pass" path="emailid"/> 
+					<input type="submit"
 					value="Sign me up!" class="inputButton" />
 				<div class="text-center">
-					already have an account? <a href="#" id="login_id">login</a>
+					already have an account? <a href="" id="login_id">login</a>
 				</div>
-			</form>
+			</form:form>
 		</div>
-	</div>
+	</div> 
 
 
 </div>

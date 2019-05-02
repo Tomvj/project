@@ -21,11 +21,12 @@ public class SellerDAOimpl implements SellerDAO {
 	public boolean insertSeller(Seller seller) {
 		try {
 			UserCred uc = new UserCred();
-			uc.setUsername(seller.getSname());
+			uc.setUserEmail(seller.getS_emailid());
 			uc.setPassword(seller.getPassword());
 			uc.setRole("ROLE_SELLER");
 			uc.setStatus("false");
 			sessionFactory.getCurrentSession().save(seller);
+			sessionFactory.getCurrentSession().save(uc);
 			return true;
 		} catch (Exception e) {
 			return false;

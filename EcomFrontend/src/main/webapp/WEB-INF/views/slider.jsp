@@ -1,4 +1,5 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cr" value="${pageContext.request.contextPath}"/>
 <script
 	src="https://jssors8.azureedge.net/script/jssor.slider-27.5.0.min.js"
 	type="text/javascript"></script>
@@ -301,7 +302,7 @@ to {
 }
 </style>
 <div id="jssor_1" 
-	style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 980px; height: 380px; overflow: hidden; visibility: hidden;">
+	style="position: relative; margin: 0 auto; top: 30px; left: 0px; width: 980px; height: 490px; overflow: hidden; visibility: hidden;">
 	<!-- Loading Screen -->
 	<div data-u="loading" class="jssorl-009-spin" style="margin-top:15%"
 		style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; text-align: center; background-color: rgba(0, 0, 0, 0.7);">
@@ -310,24 +311,24 @@ to {
 			src="https://jssorcdn7.azureedge.net/theme/svg/loading/static-svg/spin.svg" />
 	</div>
 	<div data-u="slides"
-		style="cursor: default; position: relative; top: 0px; left: 0px; width: 980px; height: 380px; overflow: hidden;">
+		style="cursor: default; position:absolute; top: 70px; left: 0px; width: 980px; height: 500px; overflow: hidden;">
 		<div>
-			<img data-u="image" src="resources/images/slide2.jpg" />
+			<img data-u="image" src="${cr}/resources/images/slide2.jpg" />
 		</div>
 		<div>
-			<img data-u="image" src="resources/images/slide3.jpg" />
+			<img data-u="image" src="${cr}/resources/images/slide3.jpg" />
 		</div>
 		<div>
-			<img data-u="image" src="resources/images/slide4.jpg" />
+			<img data-u="image" src="${cr}/resources/images/slide4.jpg" />
 		</div>
 		<div>
-			<img data-u="image" src="resources/images/slide5.jpg" />
+			<img data-u="image" src="${cr}/resources/images/slide5.jpg" />
 		</div>
 		<div>
-			<img data-u="image" src="resources/images/slider6.jpg" />
+			<img data-u="image" src="${cr}/resources/images/slider6.jpg" />
 		</div>
 		<div>
-			<img data-u="image" src="resources/images/slide1.jpg" />
+			<img data-u="image" src="${cr}/resources/images/slide1.jpg" />
 		</div>
 	</div>
 	<!-- Bullet Navigator -->
